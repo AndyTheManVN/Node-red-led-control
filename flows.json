@@ -1,0 +1,133 @@
+[
+    {
+        "id": "a30a32123cd8c8a1",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "47dbc3c2602ee442",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "0ba8fec62c03b7f5",
+        "type": "ui_group",
+        "name": "LED",
+        "tab": "",
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "6adb043721e81ced",
+        "type": "rpi-gpio out",
+        "z": "a30a32123cd8c8a1",
+        "name": "Red Led",
+        "pin": "17",
+        "set": true,
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "bcm": true,
+        "x": 360,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "1e40014a35fd654f",
+        "type": "inject",
+        "z": "a30a32123cd8c8a1",
+        "name": "On",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "1",
+        "payloadType": "str",
+        "x": 70,
+        "y": 140,
+        "wires": [
+            [
+                "6adb043721e81ced"
+            ]
+        ]
+    },
+    {
+        "id": "a311068595e732b7",
+        "type": "inject",
+        "z": "a30a32123cd8c8a1",
+        "name": "Off",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "0",
+        "payloadType": "str",
+        "x": 70,
+        "y": 200,
+        "wires": [
+            [
+                "6adb043721e81ced"
+            ]
+        ]
+    },
+    {
+        "id": "2050d31e24856987",
+        "type": "ui_switch",
+        "z": "47dbc3c2602ee442",
+        "name": "",
+        "label": "switch",
+        "tooltip": "",
+        "group": "0ba8fec62c03b7f5",
+        "order": 0,
+        "width": "1",
+        "height": "1",
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 150,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    }
+]
