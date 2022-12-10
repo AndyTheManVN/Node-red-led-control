@@ -8,14 +8,6 @@
         "env": []
     },
     {
-        "id": "47dbc3c2602ee442",
-        "type": "tab",
-        "label": "Flow 2",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
         "id": "9e1a33c0d6d89475",
         "type": "junction",
         "z": "a30a32123cd8c8a1",
@@ -38,6 +30,123 @@
         "className": ""
     },
     {
+        "id": "433047b2126b4254",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "e9cadaa47e18b13f",
+        "type": "ui_tab",
+        "name": "Office",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "407f65bd4846c10c",
+        "type": "ui_group",
+        "name": "LED controller",
+        "tab": "e9cadaa47e18b13f",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
         "id": "6adb043721e81ced",
         "type": "rpi-gpio out",
         "z": "a30a32123cd8c8a1",
@@ -48,8 +157,8 @@
         "freq": "",
         "out": "out",
         "bcm": true,
-        "x": 480,
-        "y": 120,
+        "x": 680,
+        "y": 220,
         "wires": []
     },
     {
@@ -64,8 +173,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 300,
-        "y": 60,
+        "x": 380,
+        "y": 120,
         "wires": []
     },
     {
@@ -173,16 +282,26 @@
         ]
     },
     {
-        "id": "2050d31e24856987",
+        "id": "669e2a7493994e5c",
+        "type": "comment",
+        "z": "a30a32123cd8c8a1",
+        "name": "Build dashboard",
+        "info": "",
+        "x": 140,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "a357253107f68810",
         "type": "ui_switch",
-        "z": "47dbc3c2602ee442",
+        "z": "a30a32123cd8c8a1",
         "name": "",
-        "label": "switch",
+        "label": "Switch Led RED",
         "tooltip": "",
-        "group": "0ba8fec62c03b7f5",
+        "group": "407f65bd4846c10c",
         "order": 0,
-        "width": "1",
-        "height": "1",
+        "width": 0,
+        "height": 0,
         "passthru": true,
         "decouple": "false",
         "topic": "topic",
@@ -198,10 +317,12 @@
         "offcolor": "",
         "animate": false,
         "className": "",
-        "x": 150,
-        "y": 60,
+        "x": 180,
+        "y": 380,
         "wires": [
-            []
+            [
+                "6adb043721e81ced"
+            ]
         ]
     }
 ]
