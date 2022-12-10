@@ -16,6 +16,18 @@
         "env": []
     },
     {
+        "id": "9e1a33c0d6d89475",
+        "type": "junction",
+        "z": "a30a32123cd8c8a1",
+        "x": 540,
+        "y": 220,
+        "wires": [
+            [
+                "6adb043721e81ced"
+            ]
+        ]
+    },
+    {
         "id": "0ba8fec62c03b7f5",
         "type": "ui_group",
         "name": "LED",
@@ -36,8 +48,24 @@
         "freq": "",
         "out": "out",
         "bcm": true,
-        "x": 360,
+        "x": 480,
         "y": 120,
+        "wires": []
+    },
+    {
+        "id": "a62b8734940c91fc",
+        "type": "debug",
+        "z": "a30a32123cd8c8a1",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 300,
+        "y": 60,
         "wires": []
     },
     {
@@ -54,26 +82,95 @@
         "y": 120,
         "wires": [
             [
-                "6adb043721e81ced",
+                "b8583dbec6b0b715",
                 "a62b8734940c91fc"
             ]
         ]
     },
     {
-        "id": "a62b8734940c91fc",
-        "type": "debug",
+        "id": "b8583dbec6b0b715",
+        "type": "switch",
         "z": "a30a32123cd8c8a1",
-        "name": "debug 1",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 250,
-        "y": 320,
-        "wires": []
+        "name": "if INPUT is 1",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 190,
+        "y": 200,
+        "wires": [
+            [
+                "f164d5c93a8237a9"
+            ],
+            [
+                "aa66380b403d025e"
+            ]
+        ]
+    },
+    {
+        "id": "f164d5c93a8237a9",
+        "type": "change",
+        "z": "a30a32123cd8c8a1",
+        "name": "change to 0",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "0",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 370,
+        "y": 200,
+        "wires": [
+            [
+                "9e1a33c0d6d89475"
+            ]
+        ]
+    },
+    {
+        "id": "aa66380b403d025e",
+        "type": "change",
+        "z": "a30a32123cd8c8a1",
+        "name": "change to 1",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "1",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 370,
+        "y": 260,
+        "wires": [
+            [
+                "9e1a33c0d6d89475"
+            ]
+        ]
     },
     {
         "id": "2050d31e24856987",
