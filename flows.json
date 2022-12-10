@@ -41,62 +41,39 @@
         "wires": []
     },
     {
-        "id": "1e40014a35fd654f",
-        "type": "inject",
+        "id": "249a3d72955c026c",
+        "type": "rpi-gpio in",
         "z": "a30a32123cd8c8a1",
-        "name": "On",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "1",
-        "payloadType": "str",
-        "x": 70,
-        "y": 140,
+        "name": "Button",
+        "pin": "4",
+        "intype": "up",
+        "debounce": "25",
+        "read": true,
+        "bcm": true,
+        "x": 110,
+        "y": 120,
         "wires": [
             [
-                "6adb043721e81ced"
+                "6adb043721e81ced",
+                "a62b8734940c91fc"
             ]
         ]
     },
     {
-        "id": "a311068595e732b7",
-        "type": "inject",
+        "id": "a62b8734940c91fc",
+        "type": "debug",
         "z": "a30a32123cd8c8a1",
-        "name": "Off",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "0",
-        "payloadType": "str",
-        "x": 70,
-        "y": 200,
-        "wires": [
-            [
-                "6adb043721e81ced"
-            ]
-        ]
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 250,
+        "y": 320,
+        "wires": []
     },
     {
         "id": "2050d31e24856987",
