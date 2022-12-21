@@ -142,7 +142,7 @@
         "tab": "e9cadaa47e18b13f",
         "order": 1,
         "disp": true,
-        "width": "6",
+        "width": "3",
         "collapse": false,
         "className": ""
     },
@@ -238,7 +238,8 @@
         "y": 200,
         "wires": [
             [
-                "6adb043721e81ced"
+                "6adb043721e81ced",
+                "7a01b5f3d120e4a4"
             ]
         ]
     },
@@ -265,7 +266,8 @@
         "y": 260,
         "wires": [
             [
-                "6adb043721e81ced"
+                "6adb043721e81ced",
+                "7a01b5f3d120e4a4"
             ]
         ]
     },
@@ -275,8 +277,8 @@
         "z": "a30a32123cd8c8a1",
         "name": "Build dashboard",
         "info": "",
-        "x": 140,
-        "y": 320,
+        "x": 120,
+        "y": 280,
         "wires": []
     },
     {
@@ -305,11 +307,12 @@
         "offcolor": "",
         "animate": false,
         "className": "",
-        "x": 380,
-        "y": 320,
+        "x": 360,
+        "y": 400,
         "wires": [
             [
-                "6adb043721e81ced"
+                "6adb043721e81ced",
+                "83805fa39702fc7e"
             ]
         ]
     },
@@ -346,6 +349,106 @@
         "wires": [
             [
                 "b8583dbec6b0b715"
+            ]
+        ]
+    },
+    {
+        "id": "83805fa39702fc7e",
+        "type": "change",
+        "z": "a30a32123cd8c8a1",
+        "name": "",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "true",
+                "fromt": "bool",
+                "to": "On",
+                "tot": "str"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "false",
+                "fromt": "bool",
+                "to": "Off",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 400,
+        "wires": [
+            [
+                "44a871d8663ccde2"
+            ]
+        ]
+    },
+    {
+        "id": "44a871d8663ccde2",
+        "type": "ui_text_input",
+        "z": "a30a32123cd8c8a1",
+        "name": "",
+        "label": "",
+        "tooltip": "",
+        "group": "407f65bd4846c10c",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 760,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7a01b5f3d120e4a4",
+        "type": "change",
+        "z": "a30a32123cd8c8a1",
+        "name": "",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "1",
+                "fromt": "num",
+                "to": "true",
+                "tot": "bool"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "0",
+                "fromt": "num",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 160,
+        "y": 400,
+        "wires": [
+            [
+                "a357253107f68810"
             ]
         ]
     }
