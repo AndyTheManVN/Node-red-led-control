@@ -8,11 +8,11 @@
         "env": []
     },
     {
-        "id": "9e1a33c0d6d89475",
+        "id": "a80bcf34770d3148",
         "type": "junction",
         "z": "a30a32123cd8c8a1",
-        "x": 540,
-        "y": 220,
+        "x": 440,
+        "y": 40,
         "wires": [
             [
                 "6adb043721e81ced"
@@ -147,54 +147,42 @@
         "className": ""
     },
     {
+        "id": "71a85e7ef41d2de2",
+        "type": "server",
+        "name": "Home Assistant",
+        "version": 5,
+        "addon": false,
+        "rejectUnauthorizedCerts": true,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true,
+        "heartbeat": false,
+        "heartbeatInterval": "30",
+        "areaSelector": "friendlyName",
+        "deviceSelector": "friendlyName",
+        "entitySelector": "friendlyName",
+        "statusSeparator": ": ",
+        "statusYear": "hidden",
+        "statusMonth": "short",
+        "statusDay": "numeric",
+        "statusHourCycle": "default",
+        "statusTimeFormat": "h:m",
+        "enableGlobalContextStore": false
+    },
+    {
         "id": "6adb043721e81ced",
         "type": "rpi-gpio out",
         "z": "a30a32123cd8c8a1",
-        "name": "Red Led",
+        "name": "Red Led - Pin 11",
         "pin": "17",
         "set": true,
         "level": "0",
         "freq": "",
         "out": "out",
         "bcm": true,
-        "x": 680,
+        "x": 710,
         "y": 220,
         "wires": []
-    },
-    {
-        "id": "a62b8734940c91fc",
-        "type": "debug",
-        "z": "a30a32123cd8c8a1",
-        "name": "debug 1",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 380,
-        "y": 120,
-        "wires": []
-    },
-    {
-        "id": "249a3d72955c026c",
-        "type": "rpi-gpio in",
-        "z": "a30a32123cd8c8a1",
-        "name": "Button",
-        "pin": "4",
-        "intype": "up",
-        "debounce": "25",
-        "read": true,
-        "bcm": true,
-        "x": 110,
-        "y": 120,
-        "wires": [
-            [
-                "b8583dbec6b0b715",
-                "a62b8734940c91fc"
-            ]
-        ]
     },
     {
         "id": "b8583dbec6b0b715",
@@ -250,7 +238,7 @@
         "y": 200,
         "wires": [
             [
-                "9e1a33c0d6d89475"
+                "6adb043721e81ced"
             ]
         ]
     },
@@ -277,7 +265,7 @@
         "y": 260,
         "wires": [
             [
-                "9e1a33c0d6d89475"
+                "6adb043721e81ced"
             ]
         ]
     },
@@ -317,11 +305,47 @@
         "offcolor": "",
         "animate": false,
         "className": "",
-        "x": 180,
-        "y": 380,
+        "x": 380,
+        "y": 320,
         "wires": [
             [
                 "6adb043721e81ced"
+            ]
+        ]
+    },
+    {
+        "id": "bb91287461f98755",
+        "type": "rpi-gpio in",
+        "z": "a30a32123cd8c8a1",
+        "name": "PIR sensor - Pin 38",
+        "pin": "20",
+        "intype": "tri",
+        "debounce": "25",
+        "read": false,
+        "bcm": true,
+        "x": 170,
+        "y": 40,
+        "wires": [
+            [
+                "a80bcf34770d3148"
+            ]
+        ]
+    },
+    {
+        "id": "8419a4c9770824b6",
+        "type": "rpi-gpio in",
+        "z": "a30a32123cd8c8a1",
+        "name": "Button 4 sw - Pin 40",
+        "pin": "21",
+        "intype": "up",
+        "debounce": "25",
+        "read": false,
+        "bcm": true,
+        "x": 170,
+        "y": 100,
+        "wires": [
+            [
+                "b8583dbec6b0b715"
             ]
         ]
     }

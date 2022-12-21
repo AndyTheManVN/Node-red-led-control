@@ -1,1 +1,6 @@
-{}
+{
+    "71a85e7ef41d2de2": {
+        "host": "http://192.168.18.200:8123",
+        "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJkYjUwYjkyOWVjNzQ0MTM2YWU5Y2M0Nzc2MTAwMTdjOSIsImlhdCI6MTY3MTE3ODA2NiwiZXhwIjoxOTg2NTM4MDY2fQ.qPakoK5zFfTrkd0PiG0iI8PdcXdqJUEbYh6ivejC8Wk"
+    }
+}
