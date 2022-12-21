@@ -330,7 +330,8 @@
         "y": 40,
         "wires": [
             [
-                "a80bcf34770d3148"
+                "a80bcf34770d3148",
+                "83805fa39702fc7e"
             ]
         ]
     },
@@ -374,6 +375,15 @@
                 "from": "false",
                 "fromt": "bool",
                 "to": "Off",
+                "tot": "str"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "1",
+                "fromt": "str",
+                "to": "On",
                 "tot": "str"
             }
         ],
