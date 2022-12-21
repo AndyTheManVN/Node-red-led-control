@@ -11,11 +11,12 @@
         "id": "a80bcf34770d3148",
         "type": "junction",
         "z": "a30a32123cd8c8a1",
-        "x": 440,
+        "x": 380,
         "y": 40,
         "wires": [
             [
-                "6adb043721e81ced"
+                "6adb043721e81ced",
+                "6028dd4ab8e8e0d4"
             ]
         ]
     },
@@ -170,6 +171,52 @@
         "enableGlobalContextStore": false
     },
     {
+        "id": "d6c027a7a4b2c2b1",
+        "type": "ui_tab",
+        "name": "Relay",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "d57f1430481aed17",
+        "type": "ui_group",
+        "name": "AC 220V",
+        "tab": "d6c027a7a4b2c2b1",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "38749d93fbaea412",
+        "type": "ui_group",
+        "name": "Group 2",
+        "tab": "d6c027a7a4b2c2b1",
+        "order": 2,
+        "disp": true,
+        "width": 6
+    },
+    {
+        "id": "0924c6ad7d4f6b1b",
+        "type": "ui_group",
+        "name": "Group 3",
+        "tab": "d6c027a7a4b2c2b1",
+        "order": 3,
+        "disp": true,
+        "width": 6
+    },
+    {
+        "id": "53cef72622a3267f",
+        "type": "ui_link",
+        "name": "Link 3",
+        "icon": "open_in_browser",
+        "target": "newtab",
+        "order": 3
+    },
+    {
         "id": "6adb043721e81ced",
         "type": "rpi-gpio out",
         "z": "a30a32123cd8c8a1",
@@ -289,7 +336,7 @@
         "label": "Switch Led RED",
         "tooltip": "",
         "group": "407f65bd4846c10c",
-        "order": 0,
+        "order": 3,
         "width": 0,
         "height": 0,
         "passthru": true,
@@ -307,8 +354,8 @@
         "offcolor": "",
         "animate": false,
         "className": "",
-        "x": 360,
-        "y": 400,
+        "x": 420,
+        "y": 380,
         "wires": [
             [
                 "6adb043721e81ced",
@@ -375,15 +422,6 @@
                 "fromt": "bool",
                 "to": "Off",
                 "tot": "str"
-            },
-            {
-                "t": "change",
-                "p": "payload",
-                "pt": "msg",
-                "from": "1",
-                "fromt": "str",
-                "to": "On",
-                "tot": "str"
             }
         ],
         "action": "",
@@ -391,8 +429,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 580,
-        "y": 400,
+        "x": 640,
+        "y": 380,
         "wires": [
             [
                 "44a871d8663ccde2"
@@ -404,12 +442,12 @@
         "type": "ui_text_input",
         "z": "a30a32123cd8c8a1",
         "name": "",
-        "label": "",
+        "label": "Led status",
         "tooltip": "",
         "group": "407f65bd4846c10c",
         "order": 1,
-        "width": "0",
-        "height": "0",
+        "width": 0,
+        "height": 0,
         "passthru": true,
         "mode": "text",
         "delay": 300,
@@ -417,8 +455,8 @@
         "sendOnBlur": true,
         "className": "",
         "topicType": "msg",
-        "x": 760,
-        "y": 400,
+        "x": 910,
+        "y": 380,
         "wires": [
             []
         ]
@@ -453,12 +491,206 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 160,
-        "y": 400,
+        "x": 220,
+        "y": 380,
         "wires": [
             [
                 "a357253107f68810"
             ]
         ]
+    },
+    {
+        "id": "ff5c023bda06590a",
+        "type": "ui_switch",
+        "z": "a30a32123cd8c8a1",
+        "name": "",
+        "label": "Relay 1",
+        "tooltip": "",
+        "group": "d57f1430481aed17",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 180,
+        "y": 480,
+        "wires": [
+            [
+                "d107cac5ba5de45b"
+            ]
+        ]
+    },
+    {
+        "id": "d107cac5ba5de45b",
+        "type": "rpi-gpio out",
+        "z": "a30a32123cd8c8a1",
+        "name": "",
+        "pin": "6",
+        "set": "",
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "bcm": true,
+        "x": 680,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "6035b46383162737",
+        "type": "ui_switch",
+        "z": "a30a32123cd8c8a1",
+        "name": "",
+        "label": "Relay 2",
+        "tooltip": "",
+        "group": "d57f1430481aed17",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 180,
+        "y": 560,
+        "wires": [
+            [
+                "4944dc670ad8e10b"
+            ]
+        ]
+    },
+    {
+        "id": "4944dc670ad8e10b",
+        "type": "rpi-gpio out",
+        "z": "a30a32123cd8c8a1",
+        "name": "",
+        "pin": "13",
+        "set": "",
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "bcm": true,
+        "x": 680,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "6028dd4ab8e8e0d4",
+        "type": "change",
+        "z": "a30a32123cd8c8a1",
+        "name": "",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "1",
+                "fromt": "num",
+                "to": "On",
+                "tot": "str"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "0",
+                "fromt": "num",
+                "to": "Off",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 660,
+        "y": 40,
+        "wires": [
+            [
+                "d48610edbf8a0884"
+            ]
+        ]
+    },
+    {
+        "id": "d48610edbf8a0884",
+        "type": "ui_text_input",
+        "z": "a30a32123cd8c8a1",
+        "name": "",
+        "label": "PIR sensor",
+        "tooltip": "",
+        "group": "407f65bd4846c10c",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 930,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b21a322bd9a323f1",
+        "type": "ui_text",
+        "z": "a30a32123cd8c8a1",
+        "group": "407f65bd4846c10c",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Controller status",
+        "format": "{{msg.payload}}",
+        "layout": "row-center",
+        "className": "",
+        "x": 900,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "179cc0d8883a947c",
+        "type": "ui_text",
+        "z": "a30a32123cd8c8a1",
+        "group": "407f65bd4846c10c",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Led status",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 890,
+        "y": 340,
+        "wires": []
     }
 ]
